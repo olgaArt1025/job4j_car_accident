@@ -25,14 +25,26 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th scope="col">имя</th>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Text</th>
+                    <th scope="col">Address</th>
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="u" items="${user}">
+                <c:forEach var="a" items="${accident}">
                     <tr>
                         <td>
-                            <c:out value="${u}"/>
+                            <c:out value="${a.id}"/>
+                        </td>
+                        <td>
+                            <c:out value="${a.name}"/>
+                        </td>
+                        <td>
+                            <c:out value="${a.text}"/>
+                        </td>
+                        <td>
+                            <c:out value="${a.address}"/>
                         </td>
                     </tr>
                 </c:forEach>
