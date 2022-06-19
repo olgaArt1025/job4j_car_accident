@@ -20,4 +20,16 @@ accidents.put(1, new Accident(1, "User1", "Text1", "City1"));
     public Collection<Accident> findAll() {
        return accidents.values();
     }
+
+    public void create(Accident accident) {
+    accidents.put(accident.getId(), accident);
+    }
+
+    public Accident findById(Integer id) {
+        return accidents.get(id);
+    }
+
+    public void update(Accident accident) {
+        accidents.replace(accident.getId(), accident);
+    }
 }

@@ -25,13 +25,14 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Text</th>
-                    <th scope="col">Address</th>
+                    <th scope="col">Номер протокола</th>
+                    <th scope="col">Гос.номер</th>
+                    <th scope="col">Нарушение</th>
+                    <th scope="col">Адрес</th>
                 </tr>
                 </thead>
                 <tbody>
+                    <a href="<c:url value='/create'/>">Добавить инцидент</a>
                 <c:forEach var="a" items="${accident}">
                     <tr>
                         <td>

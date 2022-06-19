@@ -17,4 +17,16 @@ private  final AccidentMem accidentMem;
     public Collection<Accident> findAll() {
         return accidentMem.findAll();
     }
+
+    public void create(Accident accident) {
+        accidentMem.create(accident);
+    }
+
+    public Accident findById(Integer id) {
+       return accidentMem.findById(id);
+    }
+
+    public void update(Accident accident) {
+        accidentMem.update(accident);
+    }
 }

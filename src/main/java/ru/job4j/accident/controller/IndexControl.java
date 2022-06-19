@@ -18,5 +18,4 @@ public class IndexControl {
         model.addAttribute("accident", service.findAll());
         return "index";
     }
-
 }
