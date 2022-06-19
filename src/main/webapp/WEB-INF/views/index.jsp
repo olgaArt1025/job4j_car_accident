@@ -37,6 +37,9 @@
                     <tr>
                         <td>
                             <c:out value="${a.id}"/>
+                            <span>
+                                <a href="<c:url value='/update?id=${a.id}'/>">Редактировать</a>
+                            </span>
                         </td>
                         <td>
                             <c:out value="${a.name}"/>
