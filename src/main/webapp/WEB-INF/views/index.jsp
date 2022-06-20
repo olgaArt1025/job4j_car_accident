@@ -29,6 +29,7 @@
                     <th scope="col">Гос.номер</th>
                     <th scope="col">Нарушение</th>
                     <th scope="col">Адрес</th>
+                    <th scope="col">Тип</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -49,6 +50,9 @@
                         </td>
                         <td>
                             <c:out value="${a.address}"/>
+                        </td>
+                        <td>
+                            <c:out value="${a.type.name}"/>
                         </td>
                     </tr>
                 </c:forEach>

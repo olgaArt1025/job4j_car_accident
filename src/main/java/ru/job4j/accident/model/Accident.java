@@ -1,21 +1,24 @@
 package ru.job4j.accident.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Accident {
+public class Accident implements Serializable {
     private int id;
     private String name;
     private String text;
     private String address;
+    private AccidentType type;
 
     public Accident() {
     }
 
-    public Accident(int id, String name, String text, String address) {
+    public Accident(int id, String name, String text, String address, AccidentType type) {
         this.id = id;
         this.name = name;
         this.text = text;
         this.address = address;
+        this.type = type;
     }
 
     public int getId() {
@@ -50,6 +53,14 @@ public class Accident {
         this.address = address;
     }
 
+    public AccidentType getType() {
+        return type;
+    }
+
+    public void setType(AccidentType type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -74,6 +85,7 @@ public class Accident {
                 + ", name='" + name + '\''
                 + ", text='" + text + '\''
                 + ", address='" + address + '\''
+                + ", type=" + type
                 + '}';
     }
 }
