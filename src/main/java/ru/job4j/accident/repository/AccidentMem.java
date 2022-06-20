@@ -6,9 +6,11 @@ import org.springframework.stereotype.Repository;
 import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @Repository
 public class AccidentMem {
+    private final AtomicInteger number = new AtomicInteger();
     private final Map<Integer, Accident> accidents = new ConcurrentHashMap<>();
 
 private AccidentMem() {
@@ -22,6 +24,9 @@ accidents.put(1, new Accident(1, "User1", "Text1", "City1"));
     }
 
     public void create(Accident accident) {
+        if (accident.getId() == 0) {
+            accident.setId(number.incrementAndGet());
+        }
     accidents.put(accident.getId(), accident);
     }
 

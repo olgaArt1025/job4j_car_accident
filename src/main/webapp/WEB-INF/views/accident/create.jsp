@@ -7,8 +7,6 @@
         <tr>
             <td>Название:</td>
         <tr>
-            <td>Номер протокола</td>
-            <td><input type='text' name='id'></td>
             <td>Гос.номер</td>
             <td><input type='text' name='name'></td>
             <td>Нарушение:</td>
