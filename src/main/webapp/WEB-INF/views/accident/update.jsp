@@ -27,6 +27,15 @@
         </tr>
             <td colspan='2'><input name="submit" type="submit" value="Сохранить" /></td>
         </tr>
+        <tr>
+            <td>Статьи:</td>
+            <td>
+                <select name="rIds" multiple>
+                    <c:forEach var="rule" items="${rules}" >
+                        <option value="${rule.id}">${rule.name}</option>
+                    </c:forEach>
+                </select>
+        </tr>
     </table>
 </form>
 </body>
