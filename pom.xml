@@ -7,6 +7,7 @@
   <artifactId>job4j_car_accident</artifactId>
   <version>1.0-SNAPSHOT</version>
   <name>job4j_car_accident</name>
+  <packaging>war</packaging>
 
   <properties>
     <spring.version>5.3.20</spring.version>
@@ -58,4 +59,18 @@
       <version>${spring.version}</version>
     </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.3.1</version>
+        <configuration>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
 </project>
