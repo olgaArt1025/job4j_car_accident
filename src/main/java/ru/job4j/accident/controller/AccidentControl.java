@@ -39,7 +39,11 @@ public class AccidentControl {
             }
         }
         accident.setRules(rules);
-        service.create(accident);
+        if (accident.getId() == 0) {
+            service.create(accident);
+        } else {
+            service.update(accident);
+        }
         return "redirect:/";
     }
 

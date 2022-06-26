@@ -25,8 +25,6 @@
                     </c:forEach>
                 </select>
         </tr>
-            <td colspan='2'><input name="submit" type="submit" value="Сохранить" /></td>
-        </tr>
         <tr>
             <td>Статьи:</td>
             <td>
@@ -35,6 +33,8 @@
                         <option value="${rule.id}">${rule.name}</option>
                     </c:forEach>
                 </select>
+        </tr>
+            <td colspan='2'><input name="submit" type="submit" value="Сохранить" /></td>
         </tr>
     </table>
 </form>
