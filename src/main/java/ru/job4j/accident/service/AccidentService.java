@@ -4,43 +4,49 @@ import org.springframework.stereotype.Service;
 import ru.job4j.accident.model.Accident;
 import ru.job4j.accident.model.AccidentType;
 import ru.job4j.accident.model.Rule;
-import ru.job4j.accident.repository.AccidentHibernate;
+import ru.job4j.accident.repository.AccidentRepository;
+import ru.job4j.accident.repository.AccidentTypeRepository;
+import ru.job4j.accident.repository.RuleRepository;
 
 import java.util.Collection;
 
 @Service
 public class AccidentService {
-    private  final AccidentHibernate store;
+    private  final AccidentRepository store;
+    private final AccidentTypeRepository typeStore;
+    private final RuleRepository ruleStore;
 
-    public AccidentService(AccidentHibernate store) {
+    public AccidentService(AccidentRepository store, AccidentTypeRepository typeStore, RuleRepository ruleStore) {
         this.store = store;
+        this.typeStore = typeStore;
+        this.ruleStore = ruleStore;
     }
 
     public Collection<Accident> findAll() {
-        return store.getAll();
+        return store.findAll();
     }
 
     public Collection<AccidentType> findAllType() {
-        return store.findAllType();
+        return typeStore.findAll();
     }
 
     public Collection<Rule> findAllRule() {
-        return store.findAllRule();
+        return ruleStore.findAll();
     }
 
     public void create(Accident accident) {
-        store.create(accident);
+        store.save(accident);
     }
 
     public Accident findById(Integer id) {
-       return store.findById(id);
+       return store.findById(id).orElse(null);
     }
 
     public Rule findByIdRule(Integer id) {
-        return store.findByIdRule(id);
+        return ruleStore.findById(id).orElse(null);
     }
 
     public void update(Accident accident) {
-        store.update(accident);
+        store.save(accident);
     }
 }
