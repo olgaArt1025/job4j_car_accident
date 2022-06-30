@@ -35,6 +35,9 @@
                 </thead>
                 <tbody>
                     <a href="<c:url value='/create'/>">Добавить инцидент</a>
+                    <div>
+                        Login as : ${user.username}
+                    </div>
                 <c:forEach var="a" items="${accident}">
                     <tr>
                         <td>
