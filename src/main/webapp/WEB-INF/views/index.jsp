@@ -35,8 +35,13 @@
                 </thead>
                 <tbody>
                     <a href="<c:url value='/create'/>">Добавить инцидент</a>
-                    <div>
-                        Login as : ${user.username}
+                    <div style="position:absolute; right:500;">
+                        <p style="color:#9900ff">
+                            Login as : ${user.username}
+                                <h10>
+                                    <a href="<c:url value='/logout'/>">Выйти</a>
+                                </h10>
+                        </p>
                     </div>
                 <c:forEach var="a" items="${accident}">
                     <tr>
